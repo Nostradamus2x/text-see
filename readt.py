@@ -34,6 +34,16 @@ patterns_to_remove = [
     r'Language:\s*ENGLISH',               # Language line
     r'Publication-Type:.*',               # Publication-Type line
     r'Journal Code:\s*\d+',               # Journal code
+    r'tamil nadu',
+    r'tamilaga vettri',
+    r'length words',
+    r'end document',
+    r'classification language',
+    r'rights reserved',
+    r'language english',
+    r'reserved length',
+    r'web publication',
+    r'words dateline',
     r'Load-Date:\s*[A-Za-z]+\s*\d{1,2},\s*\d{4}', # Load-Date line
     r'End of Document',                   # End of Document marker
 ]
@@ -132,7 +142,7 @@ print(result)
 text_obj = nltk.Text(filtered_tokens)
 print(text_obj.collocations())  # Common bigram collocations
 
-text_obj.concordance('development')  # View context for 'development'
+text_obj.concordance('vision tvk')  # View context for 'development'
 
 
 #Frequent Word and Noun Phrase Extraction

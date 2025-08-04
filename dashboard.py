@@ -58,7 +58,7 @@ st.dataframe(fourgrams)
 
 fig3, ax3 = plt.subplots(figsize=(10,5))
 ax3.bar(fourgrams['fourgram'], fourgrams['frequency'])
-ax3.set_xticklabels(fourgrams['trigram'], rotation=45, ha='right')
+ax3.set_xticklabels(fourgrams['fourgram'], rotation=45, ha='right')
 ax3.set_ylabel('Frequency')
 st.pyplot(fig3)
 
