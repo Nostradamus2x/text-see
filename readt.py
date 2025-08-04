@@ -138,25 +138,25 @@ text_obj.concordance('development')  # View context for 'development'
 #Frequent Word and Noun Phrase Extraction
 
 # Extract frequent bigrams or trigrams (e.g., 'welfare scheme', 'leadership change')
-bigrams = ngrams(filtered_tokens, 2)
-trigrams = ngrams(filtered_tokens, 3)
-four_grams = list(ngrams(filtered_tokens, 4))
-five_grams = list(ngrams(filtered_tokens, 5))
+#bigrams = ngrams(filtered_tokens, 2)
+#trigrams = ngrams(filtered_tokens, 3)
+four_grams = ngrams(filtered_tokens, 4)
+five_grams = ngrams(filtered_tokens, 5)
 
 
-bigrams_freq = nltk.FreqDist(bigrams)
-trigrams_freq = nltk.FreqDist(trigrams)
-four_grams_freq = Counter(four_grams).most_common(10)
-five_grams_freq = Counter(five_grams).most_common(10)
+#bigrams_freq = nltk.FreqDist(bigrams)
+#trigrams_freq = nltk.FreqDist(trigrams)
+four_grams_freq = nltk.FreqDist(four_grams)
+five_grams_freq = nltk.FreqDist(five_grams)
 
-bigrams_df = pd.DataFrame([(' '.join(k), v) for k, v in bigrams_freq.most_common(20)], columns=['bigram', 'frequency'])
-trigrams_df = pd.DataFrame([(' '.join(k), v) for k, v in trigrams_freq.most_common(20)], columns=['trigram', 'frequency'])
+#bigrams_df = pd.DataFrame([(' '.join(k), v) for k, v in bigrams_freq.most_common(20)], columns=['bigram', 'frequency'])
+#trigrams_df = pd.DataFrame([(' '.join(k), v) for k, v in trigrams_freq.most_common(20)], columns=['trigram', 'frequency'])
 four_grams_df = pd.DataFrame([(' '.join(k), v) for k, v in four_grams_freq.most_common(20)], columns=['fourgram', 'frequency'])
 five_grams_df = pd.DataFrame([(' '.join(k), v) for k, v in five_grams_freq.most_common(20)], columns=['fivegram', 'frequency'])
 
 
-bigrams_df.to_csv('bigram_frequency.csv', index=False)
-trigrams_df.to_csv('trigram_frequency.csv', index=False)
+#bigrams_df.to_csv('bigram_frequency.csv', index=False)
+#trigrams_df.to_csv('trigram_frequency.csv', index=False)
 four_grams_df.to_csv('fourgram_frequency.csv', index=False)
 five_grams_df.to_csv('fivegram_frequency.csv', index=False)
 
