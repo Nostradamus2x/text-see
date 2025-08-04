@@ -18,7 +18,7 @@ import re
 # nltk.download('words')
 
 # 1. Extract text from DOCX
-doc = Document('/Users/ayushshukla/Downloads/elections/Tamilaga Vettri Kazhagam .DOCX')
+doc = Document('Tamilaga Vettri Kazhagam .DOCX')
 text = '\n'.join([para.text for para in doc.paragraphs])
 
 #Clean text
